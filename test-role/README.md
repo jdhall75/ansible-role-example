@@ -16,5 +16,8 @@ TEST-ROLE
 Running tests
 -------------
 
-From the test-role directory
-`ansible-playbook tests/test.yml -i test/inventory 
+From the test-role directory.
+
+```
+ansible-playbook tests/test.yml -i test/inventory
+```
