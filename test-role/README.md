@@ -4,7 +4,7 @@ Role Name
 A role for testing function testing of the internal workings
 
 
-Role Structure
+TEST-ROLE
 --------------
 
 * `test-role/defaults/main.yml` has all the test data for exercising the parsers
