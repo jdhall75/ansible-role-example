@@ -1,0 +1,17 @@
+---
+vars:
+  time:
+    hour: "{{ item.hour }}"
+    min: "{{ item.min }}"
+    sec: "{{ item.sec }}"
+    msec: "{{ item.msec }}"
+    wk_day: "{{ item.wk_day }}"
+    time_zone: "{{ item.time_zone }}"
+    month: "{{ item.month }}"
+    mth_day: "{{ item.mth_day }}"
+    year: "{{ item.year }}"
+
+keys:
+  clock:
+    value: "{{ time }}"
+    items: "(?P<hour>\\d+):(?P<min>\\d+):(?P<sec>\\d+)\\.(?P<msec>\\d+)\\s+(?P<time_zone>\\w+)\\s(?P<wk_day>\\w+)\\s+(?P<month>\\w+)\\s+(?P<mth_day>\\d+)\\s+(?P<year>\\d+)"

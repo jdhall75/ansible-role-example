@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/root/.local/share/virtualenvs/ansible-role-example-7LIXjGEK/bin/python",
+    "python.formatting.provider": "black"
+}

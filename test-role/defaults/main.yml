@@ -1,0 +1,35 @@
+---
+# defaults file for test-role
+  show_run_hostname: hostname FLKSHUBC01.DC.DC
+  show_clock: 15:40:02.385 EDT Tue Jun 2 2020
+  show_platform: |
+    Node              Type                       State             Config state
+    --------------------------------------------------------------------------------
+    0/0/CPU0          NC55-36X100G               IOS XR RUN        NSHUT
+    0/0/NPU0          Slice                      UP
+    0/0/NPU1          Slice                      UP
+    0/0/NPU2          Slice                      UP
+    0/0/NPU3          Slice                      UP
+    0/0/NPU4          Slice                      UP
+    0/0/NPU5          Slice                      UP
+    0/RP0/CPU0        NC55-RP(Standby)           IOS XR RUN        NSHUT
+    0/RP1/CPU0        NC55-RP(Active)            IOS XR RUN        NSHUT
+    0/FC0             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FC1             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FC2             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FC3             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FC4             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FC5             NC55-5504-FC               OPERATIONAL       NSHUT
+    0/FT0             NC55-5504-FAN              OPERATIONAL       NSHUT
+    0/FT1             NC55-5504-FAN              OPERATIONAL       NSHUT
+    0/FT2             NC55-5504-FAN              OPERATIONAL       NSHUT
+    0/SC0             NC55-SC                    OPERATIONAL       NSHUT
+    0/SC1             NC55-SC                    OPERATIONAL       NSHUT
+
+  show_platform_vm: |
+    Node name       Node type       Partner name    SW status       IP address
+    --------------- --------------- --------------- --------------- ---------------
+    0/RP1/CPU0      RP (ACTIVE)     0/RP0/CPU0      FINAL Band      192.0.112.4
+    0/RP0/CPU0      RP (STANDBY)    0/RP1/CPU0      FINAL Band      192.0.108.4
+    0/0/CPU0        LC (ACTIVE)     NONE            FINAL Band      192.0.4.3
+

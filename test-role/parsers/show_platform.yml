@@ -1,0 +1,13 @@
+---
+vars:
+  node:
+    name: "{{ item.node }}"
+    type: "{{ item.type }}"
+    state: "{{ item.state }}"
+    config_state: "{{ item.config_state | default('') }}"
+
+
+keys:
+  nodes:
+    value: "{{ node }}"
+    items: "(?P<node>\\d\\S+)\\s+(?P<type>[\\w\\d\\(\\)-]+)\\s+(?P<state>\\w+(\\s\\w+\\s\\w+)?)(\\s+(?P<config_state>\\w+))?$"

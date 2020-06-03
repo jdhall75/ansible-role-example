@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  remote_user: root
+  connection: local
+  gather_facts: no
+  roles:
+    - test-role
+
+  tasks:
+    - name: test parsing for show run hostname
+      set_fact:
+        host_str: "{{ show_run_hostname | parse_cli('./parsers/show_run_hostname.yml') }}"
+
+    - name: test parsed vars from show run hostname
+      assert:
+        that:
+          - "'FLKSHUBC01.DC.DC' in host_str.host[0].hostname"
+
+    - name: test parsing of system clock[show clock]
+      set_fact:
+        time_parts: "{{ show_clock | parse_cli('./parsers/show_clock.yml') }}"
+
+    - name: test parsed vars from show clock
+      assert:
+        that:
+          - time_parts.clock[0].hour == 15
+          - time_parts.clock[0].min == 40
+          - time_parts.clock[0].sec == "02"
+          - time_parts.clock[0].msec == 385
+          - time_parts.clock[0].wk_day == "Tue"
+
+
+    - name: test parsing of show platform
+      set_fact:
+        platform_nodes: "{{ show_platform | parse_cli('./parsers/show_platform.yml') }}"

@@ -1,0 +1,9 @@
+---
+vars:
+  host: 
+    hostname: "{{item.hostname}}"
+
+keys:
+  host:
+    value: "{{host}}"
+    items: "hostname\\s(?P<hostname>\\S+)"
